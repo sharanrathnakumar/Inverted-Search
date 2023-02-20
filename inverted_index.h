@@ -49,16 +49,20 @@ int IsFileValid(char *);
 int store_filenames_to_list(char *f_name, file_node_t **head);
 
 /*Create DB*/
-int create_DB(file_node_t *file_head, main_node_t **head);
-// int create_DB(file_node_t *file_head, main_node_t * [26]);
-void read_datafile(file_node_t *, main_node_t **, char *f_name);
-int insert_at_last_main(main_node_t **head, char *word);
-sub_node_t *add_sub_node(char *);
-int update_link_table(main_node_t **main_node);
-int update_word_count(main_node_t **head);
+int create_DB(file_node_t *file_head, main_node_t *[]);
+void read_datafile(main_node_t *[], char *f_name);
+int insert_at_last_main(main_node_t **head, char *word, char *f_name);
+sub_node_t *create_sub_node(char *word, char *f_name);
+main_node_t *create_main_node(char *word, char *f_name);
+int check_n_update(main_node_t *array[], char *word, char *f_name);
+int check_sub_node(sub_node_t *ptr, char *f_name);
 
+// int update_link_table(main_node_t **main_node);
+// int update_word_count(main_node_t **head);
+/*User Information*/
+int display();
 /*Display*/
-int display_DB(main_node_t **head);
+int display_DB(main_node_t *head[]);
 
 /*search */
 int search_DB(main_node_t **head, char *word);
