@@ -52,41 +52,39 @@ int create_DB(file_node_t *file_f_head, main_node_t **f_head)
 void read_datafile(file_node_t *file_f_head, main_node_t **f_head, char *f_name)
 {
     FILE *fptr = fopen(f_name, "r");
-    main_node_t *ptr[26] = {NULL};
     int index = toupper(f_name[0]) % 65;
-    *f_head = ptr[index];
     char buff[NAMELENGTH];
-    while(!feof(fptr)) {
-    fscanf(fptr, "%s", buff);
-    insert_at_last_main(f_head, buff);
+    while (!feof(fptr))
+    {
+        fscanf(fptr, "%s", buff);
+        insert_at_last_main(f_head, buff);
     }
 }
 
 int insert_at_last_main(main_node_t **head, char *word)
 {
     int index = toupper(word[0]) % 65;
-    printf("Index: %d\n",index);
-    
-    main_node_t *new = malloc(sizeof(main_node_t));
+    printf("Index: %d\n", index);
 
-    if(head[index]->link == NULL)
+    main_node_t *new = malloc(sizeof(main_node_t));
+    main_node_t *main_array[26] = {NULL};
+
+    if (main_array[index] == NULL)
     {
-        printf("Inner Loop\n");
-        head[index]->link = new;
+        main_array[index]= new;
         new->f_count = 1;
         new->link = NULL;
-        strcpy(new->word,word);
+        strcpy(new->word, word);
         printf("Word: %s\n", new->word);
         new->sub_link = add_sub_node(word);
         return SUCCESS;
     }
-     
 }
 
-sub_node_t * add_sub_node(char * word)
+sub_node_t *add_sub_node(char *word)
 {
     sub_node_t *newSub = malloc(sizeof(sub_node_t));
-    strcpy(newSub->f_name,word);
+    strcpy(newSub->f_name, word);
     newSub->link = NULL;
     newSub->w_count = 1;
     return newSub;

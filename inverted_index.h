@@ -50,10 +50,10 @@ int store_filenames_to_list(char *f_name, file_node_t **head);
 
 /*Create DB*/
 int create_DB(file_node_t *file_head, main_node_t **head);
-//int create_DB(file_node_t *file_head, main_node_t * [26]);
+// int create_DB(file_node_t *file_head, main_node_t * [26]);
 void read_datafile(file_node_t *, main_node_t **, char *f_name);
 int insert_at_last_main(main_node_t **head, char *word);
-sub_node_t * add_sub_node(char *);
+sub_node_t *add_sub_node(char *);
 int update_link_table(main_node_t **main_node);
 int update_word_count(main_node_t **head);
 
