@@ -79,6 +79,7 @@ int check_n_update(main_node_t *main_array[], char *word, char *f_name)
             else if (ret = NOT_PRESENT)
             {
                 sub_node_t *temp = ptr->sub_link;
+                ptr->f_count++;
                 while(temp->link != NULL)
                 {
                     temp = temp->link;

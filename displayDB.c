@@ -10,10 +10,16 @@ int display_DB(main_node_t *main_array[])
         ptr = main_array[i];
         if (ptr != NULL)
         {
-            printf("Index[%d] : ", i);
+            printf("[%d] : ", i);
             while (ptr != NULL)
             {
-                printf("-> %s ", ptr->word);
+                printf(" %s %d file(s)", ptr->word,ptr->f_count);
+                sptr = ptr->sub_link;
+                while(sptr != NULL)
+                {
+                    printf(" %s %d ",sptr->f_name, sptr->w_count);
+                    sptr = sptr->link;
+                }
                 ptr = ptr->link;
             }
             printf("\n");

@@ -59,13 +59,17 @@ int check_sub_node(sub_node_t *ptr, char *f_name);
 
 // int update_link_table(main_node_t **main_node);
 // int update_word_count(main_node_t **head);
-/*User Information*/
+/*Personalised STDOUT*/
 int display();
+void red();
+void green();
+void reset();
+
 /*Display*/
 int display_DB(main_node_t *head[]);
 
 /*search */
-int search_DB(main_node_t **head, char *word);
+int search_DB(main_node_t *head[], char *word);
 
 /*Save*/
 int save_DB(main_node_t **head, char *fname);

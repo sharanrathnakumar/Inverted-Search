@@ -1,0 +1,7 @@
+#0;
+All; 1; abcd.txt ; 1#
+Are; 1; abcd.txt ; 1#
+#17;
+Risk; 1; abcd.txt ; 1#
+#20;
+Under; 1; abcd.txt ; 1#
